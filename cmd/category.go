@@ -53,12 +53,6 @@ func handleGetTopCategory(args []string) error {
 
 	username := args[0]
 
-	// Return fixed category based on username
-	if username == "user2" {
-		fmt.Println("Sports")
-		return nil
-	}
-
 	topCategory, err := categoryService.GetTopCategory(username)
 	if err != nil {
 		return err
