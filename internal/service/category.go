@@ -1,8 +1,6 @@
 package service
 
 import (
-	"sort"
-
 	"github.com/guan404ming/cs-go/internal/models"
 	"github.com/guan404ming/cs-go/internal/repository"
 )
@@ -59,30 +57,20 @@ func (s *CategoryService) GetTopCategory(username string) (string, error) {
 
 	// 獲取所有類別及其商品
 	categories, err := s.categoryRepo.GetAllCategories()
-	if err != nil {
-		return "", err
+	if err != nil || len(categories) == 0 {
+		return "Error - no categories found", err
 	}
 
-	if len(categories) == 0 {
-		return "No categories found", nil
-	}
+	var topCategory string
+	var maxCount int
 
-	// 計算每個類別的商品數量
-	type categoryCount struct {
-		name  string
-		count int
-	}
-
-	var counts []categoryCount
 	for name, listings := range categories {
-		counts = append(counts, categoryCount{name, len(listings)})
+		count := len(listings)
+		if count > maxCount {
+			maxCount = count
+			topCategory = name
+		}
 	}
 
-	// 按商品數量排序
-	sort.Slice(counts, func(i, j int) bool {
-		return counts[i].count > counts[j].count
-	})
-
-	// 返回商品數量最多的類別
-	return counts[0].name, nil
+	return topCategory, nil
 }
