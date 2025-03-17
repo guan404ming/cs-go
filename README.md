@@ -15,20 +15,15 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 
 - Go 1.16 or higher
 
-## 📝 Implementation Details
-
-- 🔢 Product IDs are assigned sequentially starting from 100001
-- ⏰ Creation time is stored when a listing is created and displayed when viewing listings
-
 ## 🚀 Build and Run
 
-### 🔨 Build
+### Build
 
 ```bash
 ./scripts/build.sh
 ```
 
-### 🏃‍♂️ Run
+### Run
 
 ```bash
 ./scripts/run.sh
@@ -42,37 +37,37 @@ Or run directly:
 
 ## 📖 Usage
 
-### 👤 Register a user
+### Register a user
 
 ```
 REGISTER <username>
 ```
 
-### 📦 Create a product listing
+### Create a product listing
 
 ```
 CREATE_LISTING <username> <title> <description> <price> <category>
 ```
 
-### 🗑️ Delete a product listing
+### Delete a product listing
 
 ```
 DELETE_LISTING <username> <listing_id>
 ```
 
-### 🔍 Query product details
+### Query product details
 
 ```
 GET_LISTING <username> <listing_id>
 ```
 
-### 📋 Query products by category
+### Query products by category
 
 ```
 GET_CATEGORY <username> <category>
 ```
 
-### 📊 Query the most popular category
+### Query the most popular category
 
 ```
 GET_TOP_CATEGORY <username>
@@ -82,7 +77,7 @@ GET_TOP_CATEGORY <username>
 
 This project uses a layered architecture to ensure separation of concerns, making it easy to maintain and extend.
 
-### 🧱 Layer Design
+### Layer Design
 
 - **cmd**: CLI command processing
 - **internal/service**: Service layer, business logic processing
