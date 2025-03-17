@@ -14,4 +14,7 @@ cat > storage/db.json << EOF
 EOF
 
 # Run the application
+echo "================================================"
+echo "CS-GO CLI is running..."
+echo "================================================"
 ./cs-go.out "$@" 
