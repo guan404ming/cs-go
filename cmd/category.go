@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"sort"
-	"time"
 )
 
 func handleGetCategory(args []string) error {
@@ -40,11 +39,8 @@ func handleGetCategory(args []string) error {
 
 	// For each listing, display the details
 	for _, listing := range listings {
-		// Get the current time
-		currentTime := time.Now()
-
-		// Format the current time
-		dateStr := currentTime.Format("2006-01-02 15:04:05")
+		// Format the date string using the stored creation time
+		dateStr := listing.CreatedAt.Format("2006-01-02 15:04:05")
 
 		// Output format: Title|Description|Price|Date|Category|Owner
 		fmt.Printf("%s|%s|%.0f|%s|%s|%s\n",

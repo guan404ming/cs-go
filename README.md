@@ -18,7 +18,7 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 ## 📝 Implementation Details
 
 - 🔢 Product IDs are assigned sequentially starting from 100001
-- ⏰ Current system time is used for timestamps when displaying products
+- ⏰ Creation time is stored when a listing is created and displayed when viewing listings
 
 ## 🚀 Build and Run
 
