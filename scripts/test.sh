@@ -31,7 +31,7 @@ GET_TOP_CATEGORY user3
 EOF
 
 # Run the test
-cat test_input.txt | ./cs-go
+cat test_input.txt | ./cs-go.out
 
 # Clean up - remove the test input file
 rm -f test_input.txt
