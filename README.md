@@ -11,78 +11,39 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 - 📋 Query products by category (GET_CATEGORY)
 - 📊 Query the most popular category (GET_TOP_CATEGORY)
 
-## 📋 Requirements
-
-- Go 1.24 or higher
-
-## 🚀 Build and Run
-
-### Build
+## 🚀 Development (Requirements: Go 1.24 or higher)
 
 ```bash
+# Build the application
 ./scripts/build.sh
-```
 
-### Run
-
-```bash
+# Run the application
 ./scripts/run.sh
+
+# Run the tests
+./scripts/test.sh
 ```
 
 ## 📖 Usage
 
-### Register a user
+- Register a user - `REGISTER <username>`
 
-```
-REGISTER <username>
-```
+- Create a product listing - `CREATE_LISTING <username> <title> <description> <price> <category>`
 
-### Create a product listing
+- Delete a product listing - `DELETE_LISTING <username> <listing_id>`
 
-```
-CREATE_LISTING <username> <title> <description> <price> <category>
-```
+- Query product details - `GET_LISTING <username> <listing_id>`
 
-### Delete a product listing
+- Query products by category - `GET_CATEGORY <username> <category>`
 
-```
-DELETE_LISTING <username> <listing_id>
-```
-
-### Query product details
-
-```
-GET_LISTING <username> <listing_id>
-```
-
-### Query products by category
-
-```
-GET_CATEGORY <username> <category>
-```
-
-### Query the most popular category
-
-```
-GET_TOP_CATEGORY <username>
-```
+- Query the most popular category - `GET_TOP_CATEGORY <username>`
 
 ## 🏗️ Architecture
 
 This project uses a layered architecture to ensure separation of concerns, making it easy to maintain and extend.
-
-### Layer Design
 
 - **cmd**: CLI command processing
 - **internal/service**: Service layer, business logic processing
 - **internal/repository**: Data access layer
 - **internal/models**: Structure definitions
 - **storage**: Persistent storage
-
-## 🧪 Testing
-
-Run the test script:
-
-```bash
-./scripts/test.sh
-``` 
