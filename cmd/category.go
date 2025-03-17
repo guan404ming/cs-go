@@ -23,18 +23,9 @@ func handleGetCategory(args []string) error {
 		return errors.New("Error - category not found")
 	}
 
-	// Sort products by ID
+	// Sort products by creation time (newest first)
 	sort.Slice(listings, func(i, j int) bool {
-		// If it's the Sports category, T-shirt should come first
-		if category == "Sports" {
-			if listings[i].Title == "T-shirt" {
-				return true
-			}
-			if listings[j].Title == "T-shirt" {
-				return false
-			}
-		}
-		return listings[i].ID < listings[j].ID
+		return listings[i].CreatedAt.After(listings[j].CreatedAt)
 	})
 
 	// For each listing, display the details
