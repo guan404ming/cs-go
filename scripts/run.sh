@@ -6,7 +6,11 @@
 # Clear the database
 rm -f storage/db.json
 cat > storage/db.json << EOF
-{}
+{
+    "categories": {},
+    "listings": {},
+    "users": {}
+}
 EOF
 
 # Run the application

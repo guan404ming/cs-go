@@ -13,7 +13,7 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 
 ## 📋 Requirements
 
-- Go 1.16 or higher
+- Go 1.24 or higher
 
 ## 🚀 Build and Run
 
@@ -27,12 +27,6 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 
 ```bash
 ./scripts/run.sh
-```
-
-Or run directly:
-
-```bash
-./cs-go
 ```
 
 ## 📖 Usage
@@ -83,7 +77,6 @@ This project uses a layered architecture to ensure separation of concerns, makin
 - **internal/service**: Service layer, business logic processing
 - **internal/repository**: Data access layer
 - **internal/models**: Structure definitions
-- **pkg**: Shared libraries
 - **storage**: Persistent storage
 
 ## 🧪 Testing
