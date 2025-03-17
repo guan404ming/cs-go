@@ -1,35 +1,34 @@
-# CS-GO: Cloud Shop CLI Application
+# 🛒 CS-GO: Cloud Shop CLI Application
 
 CS-GO is a command-line interface (CLI) application that allows users to register, create product listings, delete products, query products, and categories.
 
-## Features
+## ✨ Features
 
-- User registration (REGISTER)
-- Create product listings (CREATE_LISTING)
-- Delete product listings (DELETE_LISTING)
-- Query product details (GET_LISTING)
-- Query products by category (GET_CATEGORY)
-- Query the most popular category (GET_TOP_CATEGORY)
+- 👤 User registration (REGISTER)
+- 📦 Create product listings (CREATE_LISTING)
+- 🗑️ Delete product listings (DELETE_LISTING)
+- 🔍 Query product details (GET_LISTING)
+- 📋 Query products by category (GET_CATEGORY)
+- 📊 Query the most popular category (GET_TOP_CATEGORY)
 
-## Requirements
+## 📋 Requirements
 
 - Go 1.16 or higher
 
-## Implementation Details
+## 📝 Implementation Details
 
-- Product IDs are assigned sequentially starting from 100001
-- Creation timestamps are automatically set to the current time when a product is created
-- For testing purposes, fixed timestamps are used to match expected output
+- 🔢 Product IDs are assigned sequentially starting from 100001
+- ⏰ Current system time is used for timestamps when displaying products
 
-## Build and Run
+## 🚀 Build and Run
 
-### Build
+### 🔨 Build
 
 ```bash
 ./scripts/build.sh
 ```
 
-### Run
+### 🏃‍♂️ Run
 
 ```bash
 ./scripts/run.sh
@@ -41,49 +40,49 @@ Or run directly:
 ./cs-go
 ```
 
-## Usage
+## 📖 Usage
 
-### Register a user
+### 👤 Register a user
 
 ```
 REGISTER <username>
 ```
 
-### Create a product listing
+### 📦 Create a product listing
 
 ```
 CREATE_LISTING <username> <title> <description> <price> <category>
 ```
 
-### Delete a product listing
+### 🗑️ Delete a product listing
 
 ```
 DELETE_LISTING <username> <listing_id>
 ```
 
-### Query product details
+### 🔍 Query product details
 
 ```
 GET_LISTING <username> <listing_id>
 ```
 
-### Query products by category
+### 📋 Query products by category
 
 ```
 GET_CATEGORY <username> <category>
 ```
 
-### Query the most popular category
+### 📊 Query the most popular category
 
 ```
 GET_TOP_CATEGORY <username>
 ```
 
-## Architecture
+## 🏗️ Architecture
 
 This project uses a layered architecture to ensure separation of concerns, making it easy to maintain and extend.
 
-### Layer Design
+### 🧱 Layer Design
 
 - **cmd**: CLI command processing
 - **internal/service**: Service layer, business logic processing
@@ -92,10 +91,10 @@ This project uses a layered architecture to ensure separation of concerns, makin
 - **pkg**: Shared libraries
 - **storage**: Persistent storage
 
-## Testing
+## 🧪 Testing
 
 Run the test script:
 
 ```bash
-./test_script.sh
+./scripts/test.sh
 ``` 

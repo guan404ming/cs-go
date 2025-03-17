@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# Change to the root directory
+cd "$(dirname "$0")/.."
+
 # Build the application
-go build -o cs-go main.go
+./scripts/build.sh
+
+# Clear the database
+rm -f storage/db.json
 
 # Create test input file
 cat > test_input.txt << EOF

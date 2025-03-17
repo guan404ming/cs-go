@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"sort"
+	"time"
 )
 
 func handleGetCategory(args []string) error {
@@ -39,23 +40,11 @@ func handleGetCategory(args []string) error {
 
 	// For each listing, display the details
 	for _, listing := range listings {
-		// For testing purposes, use fixed dates based on listingID
-		// In a real application, we would use listing.CreatedAt
-		var dateStr string
-		if isTestMode() {
-			switch listing.ID {
-			case "100001":
-				dateStr = "2019-02-22 12:34:56"
-			case "100002":
-				dateStr = "2019-02-22 12:34:57"
-			case "100003":
-				dateStr = "2019-02-22 12:34:58"
-			default:
-				dateStr = "2019-02-22 12:34:56"
-			}
-		} else {
-			dateStr = listing.CreatedAt.Format("2006-01-02 15:04:05")
-		}
+		// Get the current time
+		currentTime := time.Now()
+
+		// Format the current time
+		dateStr := currentTime.Format("2006-01-02 15:04:05")
 
 		// Output format: Title|Description|Price|Date|Category|Owner
 		fmt.Printf("%s|%s|%.0f|%s|%s|%s\n",
