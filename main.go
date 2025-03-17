@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/wesley/cloudShop/cmd"
+	"github.com/guan404ming/cs-go/cmd"
 )
 
 func main() {

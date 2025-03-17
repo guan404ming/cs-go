@@ -3,8 +3,8 @@ package service
 import (
 	"sort"
 
-	"github.com/wesley/cloudShop/internal/models"
-	"github.com/wesley/cloudShop/internal/repository"
+	"github.com/guan404ming/cs-go/internal/models"
+	"github.com/guan404ming/cs-go/internal/repository"
 )
 
 type CategoryService struct {

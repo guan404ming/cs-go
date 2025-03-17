@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/wesley/cloudShop/internal/models"
+	"github.com/guan404ming/cs-go/internal/models"
 )
 
 type ListingRepository struct {

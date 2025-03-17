@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/wesley/cloudShop/internal/repository"
-	"github.com/wesley/cloudShop/internal/service"
+	"github.com/guan404ming/cs-go/internal/repository"
+	"github.com/guan404ming/cs-go/internal/service"
 )
 
 var (

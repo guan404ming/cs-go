@@ -6,7 +6,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/wesley/cloudShop/internal/models"
+	"github.com/guan404ming/cs-go/internal/models"
 )
 
 type UserRepository struct {
