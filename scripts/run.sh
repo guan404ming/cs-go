@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Change to the root directory
+cd "$(dirname "$0")/.."
+
 # Make sure to build the latest version
 ./scripts/build.sh
 
