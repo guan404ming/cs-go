@@ -1,6 +1,9 @@
 package service
 
 import (
+	"sort"
+	"strings"
+
 	"github.com/guan404ming/cs-go/internal/models"
 	"github.com/guan404ming/cs-go/internal/repository"
 )
@@ -61,16 +64,26 @@ func (s *CategoryService) GetTopCategory(username string) (string, error) {
 		return "Error - no categories found", err
 	}
 
-	var topCategory string
-	var maxCount int
-
-	for name, listings := range categories {
+	// Find the maximum count
+	maxCount := 0
+	for _, listings := range categories {
 		count := len(listings)
 		if count > maxCount {
 			maxCount = count
-			topCategory = name
 		}
 	}
 
-	return topCategory, nil
+	// Collect all categories with the maximum count
+	var topCategories []string
+	for name, listings := range categories {
+		if len(listings) == maxCount {
+			topCategories = append(topCategories, name)
+		}
+	}
+
+	// Sort categories lexically
+	sort.Strings(topCategories)
+
+	// Join the top categories with comma
+	return strings.Join(topCategories, "\n"), nil
 }
