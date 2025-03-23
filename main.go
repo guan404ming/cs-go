@@ -21,7 +21,16 @@ func main() {
 
 	// Read commands from standard input
 	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
+	for {
+		// Only print "#" if stdin is a terminal (interactive mode)
+		if isTerminal(os.Stdin) {
+			fmt.Print("# ")
+		}
+
+		if !scanner.Scan() {
+			break
+		}
+
 		line := scanner.Text()
 		if line == "" {
 			continue
@@ -82,4 +91,13 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+// Helper function to check if file is a terminal
+func isTerminal(file *os.File) bool {
+	stat, err := file.Stat()
+	if err != nil {
+		return false
+	}
+	return (stat.Mode() & os.ModeCharDevice) != 0
 }
