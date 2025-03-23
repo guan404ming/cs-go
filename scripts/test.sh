@@ -33,5 +33,6 @@ EOF
 # Run the test
 cat test_input.txt | ./cs-go.out
 
-# Clean up - remove the test input file
+# Clean up - remove the test input file and database
 rm -f test_input.txt
+rm -f storage/db.json
