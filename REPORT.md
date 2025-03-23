@@ -4,9 +4,9 @@
 
 CS-GO (Cloud Shop CLI Application) is a command-line interface application for managing an online marketplace. The application enables users to register accounts, create and manage product listings, browse items by category, and perform various marketplace operations through a simple text-based interface.
 
-GitHub Link: https://github.com/guan404ming/cs-go
+GitHub Link: <https://github.com/guan404ming/cs-go>
 
-## Execution Environment and Requirements
+## Execution Environment and Requirementsß
 
 - **Operating System**: macOS/Linux
 - **Go Version**: Go 1.24 or higher
