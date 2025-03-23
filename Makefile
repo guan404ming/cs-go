@@ -32,10 +32,7 @@ all: build
 # Build the project
 .PHONY: build
 build:
-	@echo "Building $(BINARY_NAME)..."
-	@$(GOBUILD) -o $(BUILD_DIR)/$(BINARY_NAME) $(MAIN_FILE)
-	@chmod +x $(BUILD_DIR)/$(BINARY_NAME)
-	@echo "Build successful!"
+	@./scripts/build.sh
 
 # Clean the project
 .PHONY: clean
@@ -53,7 +50,7 @@ test:
 # Run the application
 .PHONY: run
 run: build
-	@./$(BINARY_NAME)
+	@./scripts/run.sh
 
 # Install dependencies
 .PHONY: deps

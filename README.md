@@ -13,6 +13,8 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 
 ## 🚀 Development (Requirements: Go 1.24 or higher)
 
+use `./scripts/*` to build the application
+
 ```bash
 # Build the application
 ./scripts/build.sh
@@ -22,6 +24,19 @@ CS-GO is a command-line interface (CLI) application that allows users to registe
 
 # Run the tests
 ./scripts/test.sh
+```
+
+or use `make` to build, run, and test the application
+
+```bash
+# Build the application
+make build
+
+# Run the application
+make run
+
+# Run the tests
+make test
 ```
 
 ## 📖 Usage
